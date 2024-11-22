@@ -22,6 +22,26 @@
 <div class="search">
     <div class="center"></div>
     <input class="input" type="text" placeholder="Please enter keyword">
+
+<input type="text" id="search-input">
+<button onclick="search()">Search</button>
+	<div id="search-results"></div>
+	function search() {
+  // 获取输入框中的文本
+  var searchText = document.getElementById('search-input').value;
+  
+  // 在网页中查找内容
+  var pageText = document.body.innerHTML;
+  var searchRegex = new RegExp(searchText, 'gi');
+  var searchResults = pageText.match(searchRegex);
+  
+  // 显示查找结果
+  var searchResultsContainer = document.getElementById('search-results');
+  searchResultsContainer.innerHTML = searchResults.join('<br>');
+}
+	
+
+	
     <div class="button">Search</div>
     </div>
 <div class="tour">
